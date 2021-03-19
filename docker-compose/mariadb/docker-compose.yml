@@ -6,15 +6,14 @@ services:
     container_name: mariadb
     image: mariadb
     restart: always
-    hostname: 'rosesystems.kr'
     ports:
-      - 13306:3306
+      - 3306:3306
     network_mode: "bridge"
     environment:
-      MYSQL_ROOT_PASSWORD: fhwm3400!
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: fhwmdnjem7746!
+      MYSQL_ROOT_PASSWORD: jun24677
+      MYSQL_DATABASE: jhjeon
+      MYSQL_USER: jhjeon
+      MYSQL_PASSWORD: jun24677
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 #  volumes:
@@ -24,7 +23,6 @@ services:
     container_name: db-adminer
     image: adminer
     restart: always
-    hostname: 'rosesystems.kr'
     network_mode: "bridge"
     ports:
-      - 33344:8080
+      - 38080:8080

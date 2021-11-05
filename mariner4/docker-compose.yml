@@ -1,0 +1,18 @@
+version: '3.0'
+services:
+  mariner4:
+    container_name: mariner4
+    image: mariner4:4.3.3.2
+    build:
+      context: .
+    ports:
+      - "5001:5001"
+      - "5555:5555"
+      - "8080:8080"
+    volumes:
+      - "./files/mariner4:/usr/local/mariner4"
+    expose:
+      - "5001"
+      - "5555"
+      - "8080"
+    entrypoint: bash -c "/usr/local/mariner4/serverManager/serverManager.sh && /usr/local/mariner4/util/restServer/script/startup.sh && catalina.sh run"

@@ -16,8 +16,8 @@ services:
       MYSQL_PASSWORD: jun24677
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
-#  volumes:
-  #    - '/srv/mariadb:/etc/mysql'
+  volumes:
+      - './data:/etc/mysql'
 
   adminer:
     container_name: db-adminer
